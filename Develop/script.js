@@ -53,29 +53,41 @@ function generatePassword() {
     // Alert user input was invalid and retry request
     window.alert(`Please enter a positive whole number between ${minLen} and ${maxLen}.`)
   }
-  // Confirm with user to use upper case characters
-  if(window.confirm("Include upper case characters?")){
-    // Add upper case characters to pool of characters
-    charSet += upperCharset;
-  }
 
-  // Confirm with user to use lower case characters  
-  if(window.confirm("Include lower case characters?")){
-    // Add lower case characters to pool of characters
-    charSet += lowerCharset;
+  while(true){
+    // Confirm with user to use upper case characters
+    if(window.confirm("Include upper case characters?")){
+      // Add upper case characters to pool of characters
+      charSet += upperCharset;
+    }
+    // Confirm with user to use lower case characters  
+    if(window.confirm("Include lower case characters?")){
+      // Add lower case characters to pool of characters
+      charSet += lowerCharset;
+    }
+    // Confirm with user to use numeric characters  
+    if(window.confirm("Include numeric characters?")){
+      // Add numeric characters to pool of characters
+      charSet += numericCharset;
+    }
+    // Confirm with user to use special characters
+    if(window.confirm("Include special characters?")){
+      // Add special characters to pool of characters
+      charSet += specialCharset;
+    }
+    // Proceed with function if at least 1 character set was chosen
+    if (charSet.length > 0) {
+      break;
+    }
+    // Alert user at least 1 character set must be chosen and ask if they wish to continue
+    else {
+      // If user presses cancel
+      if (!window.confirm("At least 1 character set should be chosen.\nDo you still wish to continue?")) {
+        // return empty string
+        return "";
+      }
+    }
   }
-
-  // Confirm with user to use numeric characters  
-  if(window.confirm("Include numeric characters?")){
-    // Add numeric characters to pool of characters
-    charSet += numericCharset;
-  }
-  // Confirm with user to use special characters
-  if(window.confirm("Include special characters?")){
-    // Add special characters to pool of characters
-    charSet += specialCharset;
-  }
-
   // While return variable has less characters than desired
   while (password.length < passLen && charSet.length > 0)
   {
