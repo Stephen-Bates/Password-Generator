@@ -23,11 +23,11 @@ These sets include:
 
 If no sets are chosen, the user will be asked to chose at least one, or at that time they may quit the process by canceling the confirmation prompt
 
-The web page can currently be found hosted on Github [here](https://stephen-bates.github.io/Password-Generator//).
+The web page can currently be found hosted on Github [here](https://stephen-bates.github.io/Password-Generator).
 
 The should resemble the image below:
 
-![Current snapshot of the hosted page](./assets/images/Password-Generator-snapshot.png)
+![Current snapshot of the hosted page](./assets/img/Password-Generator-snapshot.png)
 
 ## Credits
 
